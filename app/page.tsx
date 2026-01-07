@@ -1,65 +1,169 @@
-import Image from "next/image";
+"use client";
+
+import { BarChart3, BookOpen, Gamepad2, Mic, Star } from "lucide-react";
+import { useEffect, useState } from "react";
+import wordDatabase from "@/app/data/wordDatabase";
+
+interface Word {
+  word: string;
+  image: string;
+  syllables: string;
+  hint: string;
+}
 
 export default function Home() {
+  const [page, setPage] = useState("home");
+  const [stars, setStars] = useState(0);
+  const [currentWord, setCurrentWord] = useState<Word | null>(null);
+  const [streak, setStreak] = useState(0);
+  const [progress, setProgress] = useState({ spelled: 0, spoken: 0, games: 0 });
+  const [highContrast, setHighContrast] = useState(false);
+
+  const speak = (text: string, rate: number = 0.9) => {
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = rate;
+      utterance.pitch = 1.1;
+      window.speechSynthesis.cancel();
+      window.speechSynthesis.speak(utterance);
+    }
+  };
+
+  const getRandomWord = () => {
+    const randomIndex = Math.floor(Math.random() * wordDatabase.length);
+    setCurrentWord(wordDatabase[randomIndex]);
+  };
+
+  useEffect(() => {
+    if (currentWord) {
+      speak(`Let's practice the word: ${currentWord.word}`);
+    }
+  }, [currentWord]);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
+    <div
+      className={`min-h-screen p-8 transition-colors duration-300 ${
+        highContrast ? "bg-black" : "bg-gray-50"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="text-8xl mb-4 animate-bounce">🎓</div>
+          <h1
+            className={`text-6xl font-bold mb-4 ${
+              highContrast ? "text-yellow-400" : "text-purple-600"
+            }`}
+          >
+            Let's Learn Words Together!
           </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+          <p
+            className={`text-2xl ${
+              highContrast ? "text-white" : "text-gray-700"
+            }`}
+          >
+            Choose what you want to do today
           </p>
+          <div className="flex justify-center gap-6 mt-6">
+            <div
+              className={`${
+                highContrast ? "bg-yellow-500 text-black" : "bg-yellow-400"
+              } px-6 py-3 rounded-full flex items-center gap-2 text-xl font-bold`}
+            >
+              <Star className="w-6 h-6" /> {stars} Stars
+            </div>
+            <div
+              className={`${
+                highContrast ? "bg-orange-500 text-black" : "bg-orange-400"
+              } px-6 py-3 rounded-full flex items-center gap-2 text-xl font-bold`}
+            >
+              🔥{streak} Streak
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <button
+            onClick={() => {
+              setPage("spell");
+              getRandomWord();
+            }}
+            className={`${
+              highContrast
+                ? "bg-blue-600 hover:bg-blue-700"
+                : "bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700"
+            } text-white p-12 rounded-3xl shadow-2xl transform transition hover:scale-105 active:scale-95`}
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <BookOpen className="w-20 h-20 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold mb-2">Spell Words</h2>
+            <p className="text-xl">Put letters in order</p>
+          </button>
+
+          <button
+            onClick={() => {
+              setPage("speak");
+              getRandomWord();
+            }}
+            className={`${
+              highContrast
+                ? "bg-green-600 hover:bg-green-700"
+                : "bg-gradient-to-br from-green-400 to-green-600 hover:from-green-500 hover:to-green-700"
+            } text-white p-12 rounded-3xl shadow-2xl transform transition hover:scale-105 active:scale-95`}
           >
-            Documentation
-          </a>
+            <Mic className="w-20 h-20 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold mb-2">Speak Words</h2>
+            <p className="text-xl">Say words out loud</p>
+          </button>
+
+          <button
+            onClick={() => {
+              setPage("games");
+              getRandomWord();
+            }}
+            className={`${
+              highContrast
+                ? "bg-purple-600 hover:bg-purple-700"
+                : "bg-gradient-to-br from-purple-400 to-purple-600 hover:from-purple-500 hover:to-purple-700"
+            } text-white p-12 rounded-3xl shadow-2xl transform transition hover:scale-105 active:scale-95`}
+          >
+            <Gamepad2 className="w-20 h-20 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold mb-2">Fun Games</h2>
+            <p className="text-xl">Play and learn</p>
+          </button>
+
+          <button
+            onClick={() => setPage("progress")}
+            className={`${
+              highContrast
+                ? "bg-pink-600 hover:bg-pink-700"
+                : "bg-gradient-to-br from-pink-400 to-pink-600 hover:from-pink-500 hover:to-pink-700"
+            } text-white p-12 rounded-3xl shadow-2xl transform transition hover:scale-105 active:scale-95`}
+          >
+            <BarChart3 className="w-20 h-20 mx-auto mb-4" />
+            <h2 className="text-4xl font-bold mb-2">My Progress</h2>
+            <p className="text-xl">See how you're doing</p>
+          </button>
         </div>
-      </main>
+
+        <div className="text-center">
+          <button
+            onClick={() => setHighContrast(!highContrast)}
+            className={`${
+              highContrast ? "bg-white text-black" : "bg-gray-800 text-white"
+            } px-8 py-4 rounded-full text-xl font-bold`}
+          >
+            {highContrast ? "🌙 Normal Mode" : "🌟 High Contrast"}
+          </button>
+        </div>
+
+        {/** Footer */}
+        <div
+          className={`text-center mt-12 ${
+            highContrast ? "text-white" : "text-gray-600"
+          } text-lg`}
+        >
+          <p>👨‍👩‍👧 Parent & Teacher Section | 🔒 Safe & Private</p>
+        </div>
+      </div>
     </div>
   );
 }
