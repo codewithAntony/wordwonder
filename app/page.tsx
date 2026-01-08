@@ -3,6 +3,7 @@
 import { BarChart3, BookOpen, Gamepad2, Mic, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import wordDatabase from "@/app/data/wordDatabase";
+import { useRouter } from "next/navigation";
 
 interface Word {
   word: string;
@@ -18,6 +19,7 @@ export default function Home() {
   const [streak, setStreak] = useState(0);
   const [progress, setProgress] = useState({ spelled: 0, spoken: 0, games: 0 });
   const [highContrast, setHighContrast] = useState(false);
+  const router = useRouter();
 
   const speak = (text: string, rate: number = 0.9) => {
     if ("speechSynthesis" in window) {
@@ -84,6 +86,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <button
             onClick={() => {
+              router.push("/words");
               setPage("spell");
               getRandomWord();
             }}
