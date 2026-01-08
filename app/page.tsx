@@ -86,7 +86,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 mb-8">
           <button
             onClick={() => {
-              router.push("/words");
+              router.push("/spell-words");
               setPage("spell");
               getRandomWord();
             }}
@@ -103,6 +103,7 @@ export default function Home() {
 
           <button
             onClick={() => {
+              router.push("/speak-words");
               setPage("speak");
               getRandomWord();
             }}
