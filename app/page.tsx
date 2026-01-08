@@ -50,7 +50,13 @@ export default function Home() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <div className="text-8xl mb-4 animate-bounce">🎓</div>
+          <div className="flex gap-3 justify-center items-center">
+            <span className="text-4xl mb-4 animate-bounce text-yellow-400">
+              WordWonder
+            </span>
+            <div className="text-8xl mb-4 animate-bounce">🎓</div>
+          </div>
+
           <h1
             className={`text-6xl font-bold mb-4 ${
               highContrast ? "text-yellow-400" : "text-purple-600"
@@ -120,6 +126,7 @@ export default function Home() {
 
           <button
             onClick={() => {
+              router.push("/games");
               setPage("games");
               getRandomWord();
             }}
@@ -135,7 +142,7 @@ export default function Home() {
           </button>
 
           <button
-            onClick={() => setPage("progress")}
+            onClick={() => router.push("/progress")}
             className={`${
               highContrast
                 ? "bg-pink-600 hover:bg-pink-700"
