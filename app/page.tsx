@@ -18,7 +18,8 @@ export default function Home() {
   const [currentWord, setCurrentWord] = useState<Word | null>(null);
   const [streak, setStreak] = useState(0);
   const [progress, setProgress] = useState({ spelled: 0, spoken: 0, games: 0 });
-  const [highContrast, setHighContrast] = useState(false);
+  const [highContrast, setHighContrast] = useState(true);
+
   const router = useRouter();
 
   const speak = (text: string, rate: number = 0.9) => {
@@ -45,7 +46,7 @@ export default function Home() {
   return (
     <div
       className={`min-h-screen p-8 transition-colors duration-300 ${
-        highContrast ? "bg-black" : "bg-gray-50"
+        highContrast ? "bg-gray-950" : "bg-gray-50"
       }`}
     >
       <div className="max-w-6xl mx-auto">
@@ -98,7 +99,7 @@ export default function Home() {
             }}
             className={`${
               highContrast
-                ? "bg-blue-600 hover:bg-blue-700"
+                ? "bg-blue-900/40  hover:bg-blue-700"
                 : "bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700"
             } text-white p-12 rounded-3xl shadow-2xl transform transition hover:scale-105 active:scale-95`}
           >
