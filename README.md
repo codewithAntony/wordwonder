@@ -7,16 +7,16 @@ WordBuddy is a specialized educational web application built to support children
 
 
 
-## ✨ Key Features
+##  Key Features
 
-* **🎙️ Speak & Verify:** Uses the Web Speech API to provide real-time feedback on pronunciation. Children "Tap to Speak" and receive immediate encouragement.
-* **🧩 Interactive Spelling:** A drag-and-drop style interface that helps children understand word structure and letter order.
-* **🖼️ Visual Matching Games:** Connects vocabulary words to high-quality imagery to reinforce word association.
-* **🌟 Progress Tracking:** A persistent "Star" and "Streak" system to build confidence and motivate daily practice.
-* **👁️ Accessibility First:** Includes a **High Contrast Mode** for users with visual sensitivities and a simplified UI to reduce cognitive load.
-* **🔊 Scaffolding:** Features "Listen Slowly" buttons that utilize TTS (Text-to-Speech) to help children hear every syllable.
+* ** Speak & Verify:** Uses the Web Speech API to provide real-time feedback on pronunciation. Children "Tap to Speak" and receive immediate encouragement.
+* ** Interactive Spelling:** A drag-and-drop style interface that helps children understand word structure and letter order.
+* ** Visual Matching Games:** Connects vocabulary words to high-quality imagery to reinforce word association.
+* ** Progress Tracking:** A persistent "Star" and "Streak" system to build confidence and motivate daily practice.
+* ** Accessibility First:** Includes a **High Contrast Mode** for users with visual sensitivities and a simplified UI to reduce cognitive load.
+* ** Scaffolding:** Features "Listen Slowly" buttons that utilize TTS (Text-to-Speech) to help children hear every syllable.
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 - **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
@@ -50,8 +50,7 @@ npm run dev
 
 To open the app: Navigate to http://localhost:3000 to see the result.
 
-❤️ Story Behind the Project
+ Story Behind the Project
 
 I built this tool to assist my niece, who is currently working through speech issues. Traditional apps were often too fast-paced or cluttered with ads. wordwonder is my way of using software engineering to solve a real-world problem for someone I love.
 
-Created with ❤️ by Antony Murithi
