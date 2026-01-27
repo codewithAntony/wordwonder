@@ -1,9 +1,9 @@
-# 🎓 wordwonder: Interactive Speech & Spelling Coach
+# wordwonder: Interactive Speech & Spelling Coach
 
 [![Live Demo](https://img.shields.io/badge/Demo-Live-green?style=flat&logo=netlify)](https://wordwonder-pi.vercel.app/)  
 [![GitHub](https://img.shields.io/badge/Repo-codewithAntony/ngomazangu-blue?style=flat&logo=github)](https://github.com/codewithAntony/wordwonder)
 
-WordBuddy is a specialized educational web application built to support children developing their speech and literacy skills. Originally inspired by my niece's journey with speech challenges, this tool provides a safe, encouraging, and fun environment to practice communication.
+WordWonder is a specialized educational web application built to support children developing their speech and literacy skills. Originally inspired by my niece's journey with speech challenges, this tool provides a safe, encouraging, and fun environment to practice communication.
 
 
 
@@ -24,7 +24,7 @@ WordBuddy is a specialized educational web application built to support children
 - **Icons:** [Lucide React](https://lucide.dev/)
 - **Speech Engine:** Browser Native SpeechSynthesis & SpeechRecognition
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 1. **Clone the repository:**
    ```bash
