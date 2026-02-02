@@ -52,5 +52,5 @@ To open the app: Navigate to http://localhost:3000 to see the result.
 
  Story Behind the Project
 
-I built this tool to assist my niece, who is currently working through speech issues. Traditional apps were often too fast-paced or cluttered with ads. wordwonder is my way of using software engineering to solve a real-world problem for someone I love.
+I built this tool to assist my niece, who is currently working through speech issues. Traditional apps were often too fast-paced or cluttered with ads. wordwonder is my way of using software engineering to solve a real-world problem for someone I love
 
