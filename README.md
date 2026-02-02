@@ -31,7 +31,6 @@ WordWonder is a specialized educational web application built to support childre
    git clone [https://github.com/codewithAntony/wordwonder.git](https://github.com/codewithAntony/wordwonder.git)
    cd word-wonder
 
-   ---
 
 ### 2. Install Dependencies 
 ```bash
