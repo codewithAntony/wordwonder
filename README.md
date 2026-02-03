@@ -18,7 +18,7 @@ WordWonder is a specialized educational web application built to support childre
 
 ##  Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
+- **Framework:** [Next.js 15](https://nextjs.org/) 
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **State Management:** [Zustand](https://github.com/pmndrs/zustand) 
 - **Icons:** [Lucide React](https://lucide.dev/)
@@ -51,5 +51,5 @@ To open the app: Navigate to http://localhost:3000 to see the result.
 
  Story Behind the Project
 
-I built this tool to assist my niece, who is currently working through speech issues. Traditional apps were often too fast-paced or cluttered with ads. wordwonder is my way of using software engineering to solve a real-world problem for someone I love
+I built this tool to assist my niece, who is currently working through speech issues. Traditional apps were often too fast-paced or cluttered with ads. wordwonder is my way of using software engineering to solve a real-world problem for someone I love.
 
