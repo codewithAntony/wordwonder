@@ -1,4 +1,4 @@
-# wordwonder: Interactive Speech & Spelling Coach
+# wordwonder: An Interactive Speech & Spelling Coach
 
 [![Live Demo](https://img.shields.io/badge/Demo-Live-green?style=flat&logo=netlify)](https://wordwonder-pi.vercel.app/)  
 [![GitHub](https://img.shields.io/badge/Repo-codewithAntony/ngomazangu-blue?style=flat&logo=github)](https://github.com/codewithAntony/wordwonder)
