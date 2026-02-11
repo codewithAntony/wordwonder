@@ -47,7 +47,7 @@ npm run dev
 
 ```
 
-To open the app: Navigate to http://localhost:3000 to see the result
+To open the app: Navigate to http://localhost:3000 to see the result.
 
  Story Behind the Project
 
