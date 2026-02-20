@@ -14,7 +14,7 @@ WordWonder is a specialized educational web application built to support childre
 *  Visual Matching Games: Connects vocabulary words to high-quality imagery to reinforce word association.
 *  Progress Tracking: A persistent "Star" and "Streak" system to build confidence and motivate daily practice.
 *  Accessibility First: Includes a High Contrast Mode for users with visual sensitivities and a simplified UI to reduce cognitive load.
-*  Scaffolding: Features "Listen Slowly" buttons that utilize TTS (Text-to-Speech) to help children hear every syllable
+*  Scaffolding: Features "Listen Slowly" buttons that utilize TTS (Text-to-Speech) to help children hear every syllable.
 
 ##  Tech Stack
 
