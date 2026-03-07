@@ -22,7 +22,7 @@ WordWonder is a specialized educational web application built to support childre
 - **Styling:** [Tailwind CSS](https://tailwindcss.com/)
 - **State Management:** [Zustand](https://github.com/pmndrs/zustand) 
 - **Icons:** [Lucide React](https://lucide.dev/)
-- **Speech Engine:** Browser Native SpeechSynthesis & SpeechRecognition.
+- **Speech Engine:** Browser Native SpeechSynthesis & SpeechRecognition
 
 ## Installation & Setup
 
