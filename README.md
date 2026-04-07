@@ -9,7 +9,7 @@ WordWonder is a specialized educational web application built to support childre
 
 ##  Key Features
 
-*  Speak & Verify: Uses the Web Speech API to provide real-time feedback on pronunciation. Children "Tap to Speak" and receive immediate encouragement.
+*  Speak & Verify: Uses the Web Speech API to provide real-time feedback on pronunciation. Children "Tap to Speak" and receive immediate encouragement
 *  Interactive Spelling: A drag-and-drop style interface that helps children understand word structure and letter order
 *  Visual Matching Games: Connects vocabulary words to high-quality imagery to reinforce word association.
 *  Progress Tracking: A persistent "Star" and "Streak" system to build confidence and motivate daily practice.
